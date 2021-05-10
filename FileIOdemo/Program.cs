@@ -14,8 +14,8 @@ namespace FileIOdemo
             FileExists();
             ReadallLines();
             ReadAllText();
-            //FileCopy();
-          //  DeleteFile();
+            FileCopy();
+            DeleteFile();
             ReadFromStreamReader();
         }
         public static void FileExists()
@@ -72,6 +72,16 @@ namespace FileIOdemo
                 }
             }
             Console.ReadLine();
+        }
+        //Stream Writer class
+        public static void WriteUsingStreamWriter()
+        {
+            string path = @"C:\Users\Aishwarya\source\repos\FileIOdemo\FileIOdemo\Example.txt";
+            using (StreamReader sr = File.OpenText(path))
+            {
+                sr.WriteLine("Hello World - .Net is awesome");
+                sr.Close();
+            }
         }
     }
 }
